@@ -15,11 +15,6 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
-app.get('/', function(req, res) {
-  res.render('home', {
-  });
-});
-
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
@@ -27,7 +22,6 @@ app.use(session({
 }))
 
 app.use(validator());
-
 
 app.get("/", function(req, res){
   if (!req.session.user){
@@ -44,7 +38,7 @@ app.get("/login", function(req, res){
 })
 
 app.post("/login", function(req, res){
-  let player = req.session.body
+  let millenial = req.session.body
 
 
 req.checkBody("username", "username required").notEmpty();
@@ -61,7 +55,7 @@ if (errors){
     return userCheck.username === req.body.username;
   });
   if (users === undefined || users.length === 0){
-    res.send("No One Found");
+    res.send("It looks like you've entered the wrong username or password.");
   }
 }
 
@@ -76,4 +70,6 @@ if (millenialUser.password == req.body.password){
   res.send("No Password");
 }
 });
+
+
 app.listen(3000);
