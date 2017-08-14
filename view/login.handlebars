@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UserLogin</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  </head>
+  <body>
+    <div class="mainContent">
+      <h1 class="loginHeader">TwitBookSpace Login</h1>
+      <ul id="errors">
+        {{#errors}}
+          <li>{{msg}}</li>
+          {{/errors}}
+        </ul>
+        <form id="login-form" action="/login" method="post">
+          <input type="text" name="username" placeholder="username" value="{{usersData.username}}">
+          <br>
+          <input type="text" name="password" placeholder="password" value="{{usersData.password}}">
+          <br>
+          <button type="submit" name="button">Login</button>
+        </form>
+    </div>
+  </body>
+</html>

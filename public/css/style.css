@@ -1,0 +1,17 @@
+body{
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Oswald', sans-serif;
+  color: white
+}
+
+.mainContent{
+  border: white solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
